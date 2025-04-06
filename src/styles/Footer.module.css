@@ -1,0 +1,155 @@
+.footer {
+  background-color: #3E2723;
+  color: #fff;
+  position: relative;
+  padding: 70px 0 20px;
+  margin-top: 50px;
+}
+
+/* Replace the mandala pattern with a gradient transition */
+.mandalaPattern {
+  position: absolute;
+  top: -75px;
+  left: 0;
+  right: 0;
+  height: 75px;
+  background: linear-gradient(to bottom, rgba(62, 39, 35, 0.5), #3E2723);
+  z-index: 2;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footerContent {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.footerSection h3 {
+  color: #FF9800;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-family: 'Tangerine', cursive;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.footerSection h4 {
+  color: #FF5722;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footerSection h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, #FF5722, transparent);
+}
+
+.footerSection p {
+  color: #FFF3E0;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footerSection ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footerSection ul li {
+  margin-bottom: 10px;
+}
+
+.footerSection ul li a {
+  color: #FFF3E0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+
+.footerSection ul li a:hover {
+  color: #FF9800;
+  transform: translateX(5px);
+}
+
+.socialLinks {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.socialLinks a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #FF5722, #FF9800);
+  color: white;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.socialLinks a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 87, 34, 0.4);
+}
+
+.contactInfo li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #FFF3E0;
+}
+
+.contactInfo i {
+  color: #FF9800;
+  font-size: 1.1rem;
+  min-width: 20px;
+}
+
+.footerBottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  text-align: center;
+  color: #FFF3E0;
+  font-size: 0.9rem;
+}
+
+.footerBottom span {
+  color: #FF5722;
+}
+
+@media (max-width: 768px) {
+  .footerContent {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .footerSection h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .socialLinks {
+    justify-content: center;
+  }
+  
+  .contactInfo li {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,302 @@
+.aboutPage {
+  padding-top: 80px;
+}
+
+.aboutHero {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/images/yoga2.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.aboutHero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.2;
+}
+
+.pageTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: 'Tangerine', cursive;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  position: relative;
+}
+
+.journeySection {
+  padding: 80px 0;
+  background-color: var(--light-color);
+}
+
+.journeyContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.journeyImage {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.journeyImage img {
+  width: 100%;
+  display: block;
+  transition: transform 0.8s ease;
+}
+
+.journeyImage:hover img {
+  transform: scale(1.05);
+}
+
+.journeyImageDecoration {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 100px;
+  height: 100px;
+  border-top: 3px solid var(--primary-color);
+  border-left: 3px solid var(--primary-color);
+  z-index: 1;
+}
+
+.journeyImageDecoration::after {
+  content: '';
+  position: absolute;
+  bottom: -185px;
+  right: -185px;
+  width: 100px;
+  height: 100px;
+  border-bottom: 3px solid var(--primary-color);
+  border-right: 3px solid var(--primary-color);
+}
+
+.journeyText h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  font-family: 'Tangerine', cursive;
+  font-weight: 700;
+}
+
+.journeyText p {
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.philosophySection {
+  padding: 80px 0;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.philosophySection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14 16H9v-2h5V9.87a4 4 0 1 1 2 0V14h5v2h-5v15.95A10 10 0 0 0 23.66 27l-3.46-2 8.2-2.2-2.9 5a12 12 0 0 1-21 0l-2.89-5 8.2 2.2-3.47 2A10 10 0 0 0 14 31.95V16zm40 40h-5v-2h5v-4.13a4 4 0 1 1 2 0V54h5v2h-5v15.95A10 10 0 0 0 63.66 67l-3.47-2 8.2-2.2-2.88 5a12 12 0 0 1-21.02 0l-2.88-5 8.2 2.2-3.47 2A10 10 0 0 0 54 71.95V56zm-39 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm40-40a2 2 0 1 1 0-4 2 2 0 0 1 0 4zM15 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm40 40a2 2 0 1 0 0-4 2 2 0 0 0 0 4z'%3E%3C/path%3E%3C/svg%3E");
+  background-color: white;
+  opacity: 0.05;
+}
+
+.sectionTitle {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  font-family: 'Tangerine', cursive;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-bottom: 15px;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  width: 50%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+}
+
+.philosophyContent {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.philosophyItem {
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+.philosophyItem:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.philosophyIcon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.philosophyItem h3 {
+  margin-bottom: 15px;
+  color: var(--dark-color);
+}
+
+.credentialsSection {
+  padding: 80px 0;
+  background-color: var(--light-color);
+  position: relative;
+}
+
+.credentialsList {
+  list-style: none;
+  padding: 0;
+  position: relative;
+  max-width: 800px;
+  margin: 50px auto 0;
+}
+
+.credentialsList::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20%;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+  margin-left: -2px;
+}
+
+.credentialsList li {
+  position: relative;
+  padding-bottom: 50px;
+  padding-left: 25%;
+}
+
+.credentialsList li:last-child {
+  padding-bottom: 0;
+}
+
+.year {
+  position: absolute;
+  left: 0;
+  width: 15%;
+  text-align: right;
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+.credential {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.credential::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: -10px;
+  width: 20px;
+  height: 20px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+.credential h3 {
+  margin-bottom: 10px;
+  color: var(--dark-color);
+}
+
+.credential p {
+  color: var(--text-color);
+  font-style: italic;
+}
+
+@media (max-width: 992px) {
+  .journeyContent {
+    grid-template-columns: 1fr;
+  }
+  
+  .journeyImage {
+    margin-bottom: 40px;
+    max-width: 500px;
+    margin: 0 auto 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutHero {
+    height: 200px;
+  }
+  
+  .pageTitle {
+    font-size: 2.5rem;
+  }
+  
+  .journeyText h2, 
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  
+  .credentialsList::before {
+    left: 30px;
+  }
+  
+  .credentialsList li {
+    padding-left: 70px;
+  }
+  
+  .year {
+    left: 0;
+    width: auto;
+    text-align: left;
+    top: 0;
+  }
+  
+  .credential::before {
+    left: -40px;
+  }
+}

@@ -1,0 +1,1009 @@
+/* Hero Section */
+.heroSection {
+  height: 100vh;
+  min-height: 600px;
+  /* Darkening the background overlay slightly for better text contrast */
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/images/yoga1.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  margin-top: -80px;
+  padding-bottom: 100px; /* Added padding to make room for the transition */
+}
+
+/* Gradient transition at the bottom of hero section instead of wave */
+.heroSection::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; /* Slight overlap to prevent gaps */
+  left: 0;
+  width: 100%;
+  height: 180px;
+  background: linear-gradient(to bottom, transparent, var(--light-color));
+  z-index: 3;
+}
+
+.heroContent {
+  max-width: 800px;
+  padding: 20px;
+  z-index: 2;
+  /* Adding a subtle background to improve text readability */
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 30px;
+  backdrop-filter: blur(2px);
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  /* Enhanced text shadow for better visibility */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 0, 0, 0.4);
+  font-weight: 700;
+  /* Adding letter-spacing for better readability */
+  letter-spacing: 1px;
+}
+
+/* Style for the non-highlighted text in the title */
+.heroTitle strong {
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.heroTitle span {
+  color: var(--secondary-color);
+  font-weight: 700;
+  /* Enhanced text shadow for the highlighted word */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 15px rgba(255, 153, 0, 0.7);
+}
+
+.heroContent p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  line-height: 1.8;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  /* Enhanced text shadow for paragraph */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.heroBtns {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.secondaryBtn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 50px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.secondaryBtn:hover {
+  background: white;
+  color: var(--primary-color);
+  transform: translateY(-3px);
+}
+
+.mandalaOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1'/%3E%3C/svg%3E");
+  opacity: 0.6;
+  z-index: 1;
+}
+
+/* About Section */
+.aboutSection {
+  padding: 100px 0 150px; /* Added extra padding at the bottom */
+  background: linear-gradient(to bottom, var(--light-color), #ffffff);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: -50px; /* Creates overlap with the next section */
+  z-index: 1;
+}
+
+/* Gradient transition from about to services section */
+.aboutSection::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(to bottom, transparent, #ffffff);
+  z-index: 2;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.decorativeLine {
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+  margin: 0 auto;
+}
+
+.aboutContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.aboutImage {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.aboutImage img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transform: scale(1.05);
+  transition: transform 0.8s ease;
+}
+
+.aboutImage:hover img {
+  transform: scale(1);
+}
+
+.aboutImageDecoration {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border: 3px solid var(--primary-color);
+  border-radius: 10px;
+  transform: translate(15px, 15px);
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.aboutText h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--dark-color);
+}
+
+.aboutText p {
+  margin-bottom: 20px;
+  line-height: 1.8;
+  color: var(--text-color);
+}
+
+.aboutBtn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 50px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+.aboutBtn:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Services Section */
+.servicesSection {
+  padding: 100px 0 150px; /* Added padding at bottom for the transition element */
+  background: linear-gradient(to bottom, #ffffff, var(--light-color));
+  position: relative;
+  overflow: hidden;
+  margin-bottom: -50px; /* Creates overlap with the next section */
+  z-index: 1;
+}
+
+/* Adding gradient transition to the bottom of services section */
+.servicesSection::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(to bottom, transparent, var(--light-color));
+  z-index: 2;
+}
+
+.servicesSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80' width='80' height='80'%3E%3Cpath fill='%23ff5722' fill-opacity='0.05' d='M14 16H9v-2h5V9.87a4 4 0 1 1 2 0V14h5v2h-5v15.95A10 10 0 0 0 23.66 27l-3.46-2 8.2-2.2-2.9 5a12 12 0 0 1-21 0l-2.89-5 8.2 2.2-3.47 2A10 10 0 0 0 14 31.95V16zm40 40h-5v-2h5v-4.13a4 4 0 1 1 2 0V54h5v2h-5v15.95A10 10 0 0 0 63.66 67l-3.47-2 8.2-2.2-2.88 5a12 12 0 0 1-21.02 0l-2.88-5 8.2 2.2-3.47 2A10 10 0 0 0 54 71.95V56zm-39 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm40-40a2 2 0 1 1 0-4 2 2 0 0 1 0 4zM15 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm40 40a2 2 0 1 0 0-4 2 2 0 0 0 0 4z'%3E%3C/path%3E%3C/svg%3E");
+  opacity: 0.3;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.serviceCard {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  overflow: hidden;
+}
+
+.serviceCard::before {
+  content: '';
+  position: absolute;
+  width: 150%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  top: 100%;
+  left: -25%;
+  transform: skewY(-5deg);
+  transition: all 0.4s ease;
+  z-index: -1;
+}
+
+.serviceCard:hover {
+  transform: translateY(-10px);
+  color: white;
+}
+
+.serviceCard:hover::before {
+  top: 0;
+}
+
+.serviceCard:hover h3, .serviceCard:hover p {
+  color: white;
+}
+
+.serviceIcon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  color: white;
+  font-size: 2rem;
+  box-shadow: 0 5px 15px rgba(255, 87, 34, 0.3);
+  transition: all 0.3s ease;
+}
+
+.serviceCard:hover .serviceIcon {
+  background: white;
+  color: var(--primary-color);
+}
+
+.serviceCard h3 {
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.serviceCard p {
+  transition: all 0.3s ease;
+}
+
+/* Classes Section */
+.classesSection {
+  padding: 100px 0 150px;
+  background: linear-gradient(to bottom, var(--light-color), rgba(255, 229, 204, 0.4));
+  position: relative;
+  overflow: hidden;
+  margin-bottom: -50px; /* Creates overlap with the next section */
+  z-index: 1;
+}
+
+/* Adding gradient transition to the bottom of classes section */
+.classesSection::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(to bottom, transparent, rgba(255, 112, 67, 0.2));
+  z-index: 2;
+}
+
+.classesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.classCard {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.classCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.classImage {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.classImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.classCard:hover .classImage img {
+  transform: scale(1.1);
+}
+
+.classOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  padding: 20px;
+  text-align: right;
+}
+
+.classOverlay span {
+  display: inline-block;
+  padding: 5px 15px;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.classInfo {
+  padding: 20px;
+}
+
+.classInfo h3 {
+  margin-bottom: 10px;
+  color: var(--dark-color);
+}
+
+.classInfo p {
+  color: var(--text-color);
+  margin-bottom: 15px;
+}
+
+.classLink {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s ease;
+}
+
+.classLink:hover {
+  color: var(--secondary-color);
+  gap: 10px;
+}
+
+/* Contact Section */
+.contactSection {
+  padding: 100px 0 150px;
+  background: linear-gradient(to bottom, 
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.6)),
+    url('../assets/images/yoga3.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Adding top gradient transition to blend with previous section */
+.contactSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: linear-gradient(to bottom, rgba(255, 112, 67, 0.2), transparent);
+  z-index: 2;
+}
+
+/* Enhanced gradient transition to the footer */
+.contactSection::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.85));
+  z-index: 2;
+}
+
+.contactContent {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 3;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 243, 224, 0.92));
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.25),
+    0 0 15px rgba(255, 87, 34, 0.2),
+    0 0 3px var(--primary-color, #ff5722);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--dark-color);
+  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  outline: 2px solid rgba(255, 153, 0, 0.15);
+  outline-offset: 5px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Contact info styles */
+.contactInfo {
+  padding-right: 20px;
+}
+
+.contactInfo h3 {
+  color: var(--dark-color);
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.contactInfo p {
+  margin-bottom: 30px;
+  color: var(--text-color);
+}
+
+.contactDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.3s ease;
+  padding: 15px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contactItem:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 87, 34, 0.15);
+}
+
+.contactIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  box-shadow: 0 5px 15px rgba(255, 87, 34, 0.2);
+}
+
+.contactText {
+  flex-grow: 1;
+}
+
+.contactText h4 {
+  margin: 0 0 5px 0;
+  font-size: 1.1rem;
+  color: var(--dark-color);
+}
+
+.contactText p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--dark-color);
+}
+
+/* Form container styles */
+.contactFormContainer {
+  width: 100%;
+  text-align: center;
+}
+
+.contactFormContainer h3 {
+  color: var(--dark-color);
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.contactFormContainer p {
+  margin-bottom: 30px;
+  color: var(--text-color);
+}
+
+.contactForm {
+  text-align: left;
+}
+
+.contactContent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+}
+
+.contactContent::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3z' fill='%23ff5722' fill-opacity='0.07'/%3E%3C/svg%3E");
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.contactContent:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 0 25px rgba(255, 87, 34, 0.25),
+    0 0 5px var(--primary-color, #ff5722);
+}
+
+.contactContent h2 {
+  color: var(--dark-color);
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.contactContent h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+}
+
+.contactContent p {
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+.formGroup {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  width: 100%;
+  padding: 15px 20px;
+  border: 1px solid rgba(255, 87, 34, 0.2);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  color: var(--dark-color);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(255, 87, 34, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.formGroup::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  border-radius: 10px;
+}
+
+.formGroup:focus-within::before {
+  opacity: 0.1;
+}
+
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.formGroup select {
+  color: rgba(0, 0, 0, 0.6);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='%23ff5722' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 15px) center;
+  padding-right: 35px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus,
+.formGroup select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background: #ffffff;
+  box-shadow: 0 0 15px rgba(255, 152, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.formGroup select option {
+  color: var(--text-color);
+  background: white;
+}
+
+.contactForm button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 16px;
+  border: none;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(255, 87, 34, 0.2);
+  z-index: 1;
+}
+
+.contactForm button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.6s ease;
+  z-index: -1;
+}
+
+.contactForm button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 87, 34, 0.3);
+}
+
+.contactForm button:hover::before {
+  left: 100%;
+}
+
+.contactDecoration {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  z-index: 0;
+}
+
+/* Loading state styles */
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(to bottom, var(--light-color), #ffffff);
+}
+
+.loadingSpinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255, 87, 34, 0.1);
+  border-radius: 50%;
+  border-top-color: var(--primary-color);
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: 20px;
+}
+
+.loadingContainer p {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Adding styles for section heading animations when scrolled into view */
+@keyframes headingPop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.sectionHeader h2.animated {
+  transform: scale(1.1);
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  animation: headingPop 0.6s ease-out;
+  color: var(--primary-color);
+  transition: all 0.5s ease;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .servicesGrid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+  
+  .classesGrid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 992px) {
+  .aboutContent {
+    grid-template-columns: 1fr;
+  }
+  
+  .aboutImage {
+    max-width: 500px;
+    margin: 0 auto 40px;
+  }
+  
+  .heroSection {
+    min-height: 550px;
+  }
+  
+  .contactContent {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+  }
+  
+  .contactFormContainer {
+    padding-left: 0;
+    padding-top: 30px;
+    border-left: none;
+    border-top: 1px solid rgba(255, 87, 34, 0.1);
+  }
+  
+  .contactContent h2 {
+    font-size: 2.2rem;
+  }
+  
+  .sectionHeader h2 {
+    font-size: 2.2rem;
+  }
+  
+  .aboutSection, .servicesSection, .classesSection, .contactSection {
+    padding: 80px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+  
+  .heroBtns {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .heroContent p {
+    font-size: 1rem;
+  }
+  
+  .servicesGrid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .classesGrid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 50px auto 0;
+  }
+  
+  .contactContent {
+    padding: 0 20px;
+  }
+  
+  .aboutText h3 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .heroSection {
+    min-height: 500px;
+    margin-top: -60px;
+  }
+  
+  .heroContent {
+    padding: 20px;
+  }
+  
+  .heroTitle {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  .heroContent p {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+  
+  .secondaryBtn, .aboutBtn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .aboutSection, .servicesSection, .classesSection, .contactSection {
+    padding: 60px 0;
+  }
+  
+  .sectionHeader {
+    margin-bottom: 30px;
+  }
+  
+  .aboutImageDecoration {
+    transform: translate(8px, 8px);
+  }
+  
+  .aboutText h3 {
+    font-size: 1.5rem;
+  }
+  
+  .aboutText p {
+    font-size: 0.95rem;
+  }
+  
+  .serviceCard {
+    padding: 20px;
+  }
+  
+  .serviceIcon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+  
+  .contactContent h2 {
+    font-size: 1.8rem;
+  }
+  
+  .formGroup input,
+  .formGroup select,
+  .formGroup textarea {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+  
+  .servicesGrid {
+    gap: 15px;
+  }
+  
+  .classImage {
+    height: 200px;
+  }
+  
+  .classInfo {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 375px) {
+  .heroTitle {
+    font-size: 1.8rem;
+  }
+  
+  .heroContent {
+    padding: 15px;
+  }
+  
+  .serviceCard {
+    padding: 15px;
+  }
+  
+  .serviceIcon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+  
+  .classImage {
+    height: 180px;
+  }
+}
