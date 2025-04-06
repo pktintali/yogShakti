@@ -4,6 +4,7 @@ import styles from '../styles/Header.module.css';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -21,6 +22,10 @@ const Header = () => {
     };
   }, [scrolled]);
 
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
@@ -29,13 +34,22 @@ const Header = () => {
             <h1>Yoga<span>Shakti</span></h1>
           </Link>
         </div>
-        <nav className={styles.nav}>
+        
+        <div className={styles.mobileMenuToggle} onClick={toggleMenu}>
+          <div className={`${styles.hamburger} ${menuOpen ? styles.open : ''}`}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        
+        <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ''}`}>
           <ul>
-            <li><Link to="/" className={location.pathname === '/' ? styles.active : ''}>Home</Link></li>
-            <li><Link to="/about" className={location.pathname === '/about' ? styles.active : ''}>About Me</Link></li>
-            <li><Link to="/classes" className={location.pathname === '/classes' ? styles.active : ''}>Classes</Link></li>
-            <li><Link to="/gallery" className={location.pathname === '/gallery' ? styles.active : ''}>Gallery</Link></li>
-            <li><Link to="/contact" className={location.pathname === '/contact' ? styles.active : ''}>Contact</Link></li>
+            <li><Link to="/" className={location.pathname === '/' ? styles.active : ''} onClick={() => setMenuOpen(false)}>Home</Link></li>
+            <li><Link to="/about" className={location.pathname === '/about' ? styles.active : ''} onClick={() => setMenuOpen(false)}>About Me</Link></li>
+            <li><Link to="/classes" className={location.pathname === '/classes' ? styles.active : ''} onClick={() => setMenuOpen(false)}>Classes</Link></li>
+            <li><Link to="/gallery" className={location.pathname === '/gallery' ? styles.active : ''} onClick={() => setMenuOpen(false)}>Gallery</Link></li>
+            <li><Link to="/contact" className={location.pathname === '/contact' ? styles.active : ''} onClick={() => setMenuOpen(false)}>Contact</Link></li>
           </ul>
         </nav>
       </div>

@@ -4,15 +4,15 @@
   left: 0;
   width: 100%;
   z-index: 100;
-  padding: 20px 0;
+  padding: 0 0;
   transition: all 0.3s ease;
-  background: linear-gradient(90deg, rgba(255, 87, 34, 0.8), rgba(255, 153, 0, 0.7));
+  background: linear-gradient(90deg, rgba(255, 87, 34, 0.9), rgba(255, 153, 0, 0.9));
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .scrolled {
   padding: 10px 0;
-  background: linear-gradient(90deg, rgba(255, 87, 34, 0.95), rgba(255, 153, 0, 0.9));
+  background: linear-gradient(90deg, rgba(255, 87, 34, 0.95), rgba(255, 153, 0, 0.95));
 }
 
 .container {
@@ -22,24 +22,30 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  position: relative;
 }
 
 .logo h1 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.8rem;
+  font-family: 'Tangerine', cursive;
+  font-size: 2.8rem;
   color: #fff;
   margin: 0;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: 700;
+  display: inline-block;
 }
 
 .logo span {
-  color: #4a148c;
-  font-weight: 300;
+  color: #ff9800;
+  font-weight: 700; /* Making Shakti bolder */
+  font-style: normal;
+  display: inline-block;
+  text-shadow: 0 0 10px rgba(255, 152, 0, 0.5); /* Adding glow effect to make it stand out */
 }
 
 .logo a {
   text-decoration: none;
+  display: inline-block; /* Ensures inline display */
 }
 
 .nav ul {
@@ -88,19 +94,145 @@
   font-weight: 700;
 }
 
+/* Mobile menu toggle button */
+.mobileMenuToggle {
+  display: none;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.hamburger {
+  width: 30px;
+  height: 20px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.hamburger span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #fff;
+  border-radius: 3px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: all 0.3s ease;
+}
+
+.hamburger span:nth-child(1) {
+  top: 0px;
+}
+
+.hamburger span:nth-child(2) {
+  top: 8px;
+}
+
+.hamburger span:nth-child(3) {
+  top: 16px;
+}
+
+/* Hamburger animation when open */
+.hamburger.open span:nth-child(1) {
+  top: 8px;
+  transform: rotate(135deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+.hamburger.open span:nth-child(3) {
+  top: 8px;
+  transform: rotate(-135deg);
+}
+
 @media (max-width: 768px) {
+  .header {
+    padding: 10px 0;
+    margin-top: 0;
+    background: linear-gradient(90deg, rgba(255, 87, 34, 0.95), rgba(255, 153, 0, 0.95));
+  }
+  
+  .scrolled {
+    padding: 8px 0;
+  }
+
   .container {
-    flex-direction: column;
-    text-align: center;
+    flex-direction: row;
+    padding: 0 10px;
+    background: none;
+    border-bottom: none; /* Removed border-bottom that was causing the line effect */
+    gap: 0;
+  }
+  
+  .mobileMenuToggle {
+    display: block;
+    margin-left: 10px;
+  }
+  
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: linear-gradient(90deg, rgba(255, 87, 34, 0.95), rgba(255, 153, 0, 0.95));
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    width: 100%;
+    z-index: 999;
+  }
+  
+  .navOpen {
+    max-height: 300px;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
   }
   
   .nav ul {
-    margin-top: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
   }
   
   .nav li {
-    margin: 5px 8px;
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  .nav a {
+    font-size: 1.2rem;
+    display: block;
+    padding: 8px 0;
+  }
+  
+  .nav a::after {
+    display: none;
+  }
+
+  .logo h1 {
+    font-size: 2.2rem; /* Slightly larger for better visibility */
+    margin-right: auto;
+    line-height: 1;
+    white-space: nowrap;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  
+  .logo span {
+    color: #ff9800;
+    font-weight: 700;
+    text-shadow: 0 0 8px rgba(255, 152, 0, 0.5);
   }
 }
